@@ -1,0 +1,19 @@
+<div class="container form-group">
+	<form name="cadastroForm">
+		<div class="col-lg-12 form-group">
+			<label>Nome:</label>
+			<input type="text" class="form-control" ng-model="usuario.Nome" name="nome" required />
+		</div>
+		<div class="col-lg-12  form-group">
+			<label>Login:</label>
+			<input type="text" class="form-control" name="login" ng-model="usuario.Login" required />
+		</div>
+		<div class="col-lg-12  form-group">
+			<label>Senha:</label>
+			<input type="password" name="senha" ng-model="usuario.Senha" class="form-control" required />
+		</div>
+	</form>
+	<div class="col-lg-12 form-group text-center">
+		<button type="button" ng-click="cadastrar(usuario)" ng-disabled="!cadastroForm.$valid" class="btn btn-primary">Cadastrar</button>
+	</div>
+</div>

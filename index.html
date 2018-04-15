@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>OneTech</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="OneTech shop project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="styles/shop_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/shop_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/site.css">
+
+
+</head>
+<body ng-app="ecommerce">
+	
+	<div class="super_container">
+		
+		<!-- Header -->
+		
+		<header class="header">
+	
+			<!-- Top Bar -->
+	
+			<div class="top_bar">
+				<div class="container">
+					<div class="row">
+						<div class="col d-flex flex-row">
+							<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/phone.png" alt=""></div>+38 068 005 3570</div>
+							<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+							<div class="top_bar_content ml-auto">
+								<div class="top_bar_menu">
+									<ul class="standard_dropdown top_bar_dropdown" ng-controller="homeController">
+										<li>
+											<a href="#">R$ Reais<i class="fas fa-chevron-down"></i></a>
+										</li>
+										<li>
+										<div><a ui-sref="gerenciaprodutos">Gerenciar Produtos</a></div>
+										</li>
+										<li>
+									
+												<div><a ui-sref="registrar">Registrar</a></div>
+										</li>
+										<li >
+											
+											<a ng-if="!usuarioLogado">Entrar<i class="fas fa-chevron-down"></i></a>
+											<a ng-if="usuarioLogado">{{usuarioLogado.Nome}}<i class="fas fa-chevron-down"></i></a>
+											<ul style="width:250px;height:200px"  ng-if="usuarioLogado">
+													<li style="width:240px;height:75px"><div class="col-lg-4"><label >Sair</label></div></li>
+												</ul>
+											<ul style="width:250px;height:200px"  ng-if="!usuarioLogado">
+												<li style="width:240px;height:75px"><div class="col-lg-4"><label >Login:</label></div><div class="col-lg-12"><input ng-model="login" type="text" class="form-control"></div></li>
+												<li style="width:240px;height:75px"><div class="col-lg-4"><label >Senha</label></div><div class="col-lg-12"><input ng-model="senha" class="form-control" type="password"></div></li>
+												<li style="width:240px;height:75px"><div class="col-lg-12 text-center"><button ng-click="logar(login,senha)" ng-disabled="!login&&!senha" class="btn btn-sm btn-primary"> Logar</button></div></li>
+												
+											</ul>
+											
+											
+										</li>
+									</ul>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>		
+			</div>
+	
+			<!-- Header Main -->
+	
+			<div class="header_main">
+				<div class="container">
+					<div class="row">
+	
+						<!-- Logo -->
+						<div class="col-lg-2 col-sm-3 col-3 order-1">
+							<div class="logo_container">
+								<div class="logo"><a href="#">Comercio S.I</a></div>
+							</div>
+						</div>
+	
+						<!-- Search -->
+						<div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+							<div class="header_search">
+								<div class="header_search_content">
+									<div class="header_search_form_container">
+										<form action="#" class="header_search_form clearfix">
+											<input type="search" required="required" class="header_search_input" placeholder="Search for products...">
+											<div class="custom_dropdown">
+												<div class="custom_dropdown_list">
+													<span class="custom_dropdown_placeholder clc">Todas Categorias</span>
+													<i class="fas fa-chevron-down"></i>
+													<ul class="custom_list clc">
+														<li><a class="clc" href="#">Todas Categorias</a></li>
+														<li><a class="clc" href="#">Computadores</a></li>
+														<li><a class="clc" href="#">Notebooks</a></li>
+														<li><a class="clc" href="#">Cameras</a></li>
+														<li><a class="clc" href="#">Hardware</a></li>
+														<li><a class="clc" href="#">Smartphones</a></li>
+													</ul>
+												</div>
+											</div>
+											<button type="submit" class="header_search_button trans_300" value="Submit"><img src="images/search.png" alt=""></button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+						<!-- Wishlist -->
+						<div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+							<div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
+								<div class="wishlist d-flex flex-row align-items-center justify-content-end">
+									<div class="wishlist_icon"><img src="images/heart.png" alt=""></div>
+									<div class="wishlist_content">
+										<div class="wishlist_text"><a href="#">Lista de Desejos</a></div>
+										<div class="wishlist_count">115</div>
+									</div>
+								</div>
+	
+								<!-- Cart -->
+								<div class="cart">
+									<div class="cart_container d-flex flex-row align-items-center justify-content-end">
+										<div class="cart_icon">
+											<img src="images/cart.png" alt="">
+											<div class="cart_count"><span>10</span></div>
+										</div>
+										<div class="cart_content">
+											<div class="cart_text"><a href="#">Carrinho</a></div>
+											<div class="cart_price">R$85</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Main Navigation -->
+	
+			<nav class="main_nav">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							
+							<div class="main_nav_content d-flex flex-row">
+	
+								<!-- Categories Menu -->
+	
+								
+	
+								<!-- Main Nav Menu -->
+	
+								<div class="main_nav_menu ml-auto">
+									<ul class="standard_dropdown main_nav_dropdown">
+										<li><a href="#">Início<i class="fas fa-chevron-down"></i></a></li>
+										
+										<li class="hassubs">
+											<a href="#">Paginas<i class="fas fa-chevron-down"></i></a>
+											<ul>
+												<li><a href="shop.html">Compras<i class="fas fa-chevron-down"></i></a></li>
+												<li><a href="product.html">Produto<i class="fas fa-chevron-down"></i></a></li>
+												<li><a href="cart.html">Carrinho<i class="fas fa-chevron-down"></i></a></li>
+												<li><a href="contact.html">Contato<i class="fas fa-chevron-down"></i></a></li>
+											</ul>
+										</li>
+										<li><a href="contact.html">Contato<i class="fas fa-chevron-down"></i></a></li>
+									</ul>
+								</div>
+	
+								<!-- Menu Trigger -->
+	
+								<div class="menu_trigger_container ml-auto">
+									<div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+										<div class="menu_burger">
+											<div class="menu_trigger_text">menu</div>
+											<div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+										</div>
+									</div>
+								</div>
+	
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+			
+			<!-- Menu -->
+	
+			
+	
+		</header>
+		
+		<!-- Home -->
+	
+		
+	<div class="shop_content">
+
+		<div ui-view></div>
+	</div>
+		<!-- Recently Viewed -->
+	
+	
+	
+		<!-- Brands -->
+	
+		<hr />
+	
+		<!-- Newsletter -->
+	
+		
+	
+		<!-- Footer -->
+	
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+	
+					<div class="col-lg-3 footer_col">
+						<div class="footer_column footer_contact">
+							<div class="logo_container">
+								<div class="logo"><a href="#">Comercio S.I</a></div>
+							</div>
+							<div class="footer_title">Contato</div>
+							<div class="footer_phone">+38 068 005 3570</div>
+							<div class="footer_contact_text">
+								<p>Puc Minas</p>
+								<p>Contagem, MG</p>
+							</div>
+							<div class="footer_social">
+								<ul>
+								
+								</ul>
+							</div>
+						</div>
+					</div>
+	
+					<div class="col-lg-2 offset-lg-2">
+						<div class="footer_column">
+							<div class="footer_title"></div>
+							<ul class="footer_list">
+								
+							</ul>
+							
+							<ul class="footer_list">
+								
+							</ul>
+						</div>
+					</div>
+	
+					<div class="col-lg-2">
+						<div class="footer_column">
+							<ul class="footer_list footer_list_2">
+								
+							</ul>
+						</div>
+					</div>
+	
+					
+				</div>
+			</div>
+		</footer>
+	
+		<!-- Copyright -->
+	
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						
+						<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
+							<div class="copyright_content"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	 &copy;<script>document.write(new Date().getFullYear());</script>  <i class="fa fa-heart" aria-hidden="true"></i> by 
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	</div>
+							<div class="logos ml-sm-auto">
+								<ul class="logos_list">
+									<li><a href="#"><img src="images/logos_1.png" alt=""></a></li>
+									<li><a href="#"><img src="images/logos_2.png" alt=""></a></li>
+									<li><a href="#"><img src="images/logos_3.png" alt=""></a></li>
+									<li><a href="#"><img src="images/logos_4.png" alt=""></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="styles/bootstrap4/popper.js"></script>
+	<script src="styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="plugins/greensock/TweenMax.min.js"></script>
+	<script src="plugins/greensock/TimelineMax.min.js"></script>
+	<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+	<script src="plugins/greensock/animation.gsap.min.js"></script>
+	<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="plugins/easing/easing.js"></script>
+	<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+	<script src="plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+	<script src="plugins/parallax-js-master/parallax.min.js"></script>
+	
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/angular-ui-router.min.js"></script>
+	<script src="js/angular-cookies.min.js"></script>
+	
+	<script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+	<script src="app.js"></script>
+	<script src="routes.js"></script>
+	
+	
+	<script src="services/user.js"></script>
+	<script src="services/produtos.js"></script>
+	<script src="services/mensagens.js"></script>
+	
+	<script src="views/home/homeController.js"></script>
+	<script src="views/registrar/registrarController.js"></script>
+	<script src="views/gerenciaprodutos/gerenciaProdutosController.js"></script>
+	</body>
+
+
+</html>
