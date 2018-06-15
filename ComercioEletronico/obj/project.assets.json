@@ -13331,11 +13331,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\ComercioEletronico\\ComercioEletronico\\Web.csproj",
+      "projectUniqueName": "C:\\projetos\\e-commerce\\ComercioEletronico\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\ComercioEletronico\\ComercioEletronico\\Web.csproj",
+      "projectPath": "C:\\projetos\\e-commerce\\ComercioEletronico\\Web.csproj",
       "packagesPath": "C:\\Users\\Leandro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\ComercioEletronico\\ComercioEletronico\\obj\\",
+      "outputPath": "C:\\projetos\\e-commerce\\ComercioEletronico\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13354,8 +13354,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\ComercioEletronico\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\ComercioEletronico\\Repository\\Repository.csproj"
+            "C:\\projetos\\e-commerce\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\projetos\\e-commerce\\Repository\\Repository.csproj"
             }
           }
         }
