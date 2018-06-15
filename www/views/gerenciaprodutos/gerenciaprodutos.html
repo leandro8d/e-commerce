@@ -1,0 +1,27 @@
+<div class="col-lg-12" style="float:none">
+		<div class="col-lg-8 col-lg-offset-2" style="float:none">
+		<table class="table">
+			<thead>
+				<tr>
+				<th style="width:100px"  class="text-center"><button class=" btn btn-primary" ng-click="adicionarProduto()"><span class="fas fa-plus"></span></button></th>
+				<th style="width:150px" class="text-center">Img</th>
+				<th class="text-center" style="min-width:500px;max-width:800px">Nome</th>
+				<th class="text-center" style="width:100px">Preco</th>
+				<th class="text-center" style="width:100px">Quantidade</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="p in produtos" >
+				<td class="filterable-cell text-center" style="width:100px">
+					<button class=" btn btn-primary" ng-click="editarProduto(p)"><span class="fas fa-edit"></span></button>
+					<button class=" btn btn-danger" ng-click="removerProduto(p)"><span class="fas  fa-trash-alt"></span></button>
+				</td>
+				<td class="filterable-cell text-center" style="width:150px"><img src="{{p.Foto}}" width="100" height="50"/></td>
+				<td class="filterable-cell text-left">{{p.Nome}}</td>
+				<td class="filterable-cell text-right" style="width:100px">{{p.Preco}}</td>
+				<td class="filterable-cell text-right" style="width:100px">{{p.Quantidade}}</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	</div>

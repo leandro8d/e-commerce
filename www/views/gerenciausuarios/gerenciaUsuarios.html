@@ -1,0 +1,24 @@
+
+		<div class="col-lg-8 col-lg-offset-2" style="float:none">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+                    <th></th>
+				<th class="text-center" style="min-width:500px;max-width:800px">Nome</th>
+				<th class="text-center" style="width:100px">Email</th>
+				<th class="text-center" style="width:100px">Tipo Usuario</th>
+			</tr>
+			</thead>
+			<tbody>
+                <tr ng-repeat="p in usuarios">
+                    <td class="filterable-cell text-center" style="width:100px">
+                        <button class=" btn btn-primary" ng-click="editarUsuario(p)"><span class="fas fa-edit"></span></button>
+                        <button class=" btn btn-danger" ng-click="removerUsuario(p)"><span class="fas  fa-trash-alt"></span></button>
+                    </td>
+                    <td class="filterable-cell text-left">{{p.Nome}}</td>
+                    <td class="filterable-cell text-right" style="width:100px">{{p.Email}}</td>
+                    <td class="filterable-cell text-right" style="width:100px">{{p.IdTipoUsuarioNavigation.Descricao}}</td>
+                </tr>
+		</tbody>
+		</table>
+	</div>

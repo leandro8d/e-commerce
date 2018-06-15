@@ -1,0 +1,29 @@
+
+    <div class="modal-header">
+        <h2 class="modal-title">{{edicao?'Edição de Produtos':'Inclusão de Produtos'}}</h2>
+    </div>
+
+    <div class="modal-body">
+
+        <form name="cadastroForm">
+            <div class="col-lg-12 form-group">
+                <label>Nome:</label>
+                <input type="text" class="form-control" ng-model="usr.Nome" name="nome" required />
+            </div>
+            <div class="col-lg-12 form-group">
+                <label>Email:</label>
+                <input type="text" class="form-control" ng-model="usr.Email" name="descricao" required />
+            </div>
+            <div class="col-lg-12 form-group">
+                <label class="label-control">Tipo: </label>
+                <input type="radio" ng-model="usr.IdTipoUsuario" ng-value="2" name="descricao">Normal
+                <input type="radio" ng-model="usr.IdTipoUsuario" ng-value="1" name="descricao"> Admin
+            </div>
+
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">Confirmar</button>
+        <button class="btn btn-default" type="button" ng-click="cancel()">Cancelar</button>
+    </div>

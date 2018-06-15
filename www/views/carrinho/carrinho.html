@@ -1,0 +1,30 @@
+﻿<div class="col-lg-12">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>IMG</th>
+                <th>Produto</th>
+                <th>Valor</th>
+                <th>Quantidade</th>
+                <th>Disponível</th>
+                <th>SubTotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="car in carrinho">
+                <td><img width="50" height="50" src="{{car.IdProdutoNavigation.Foto}}" /></td>
+                <td>{{car.IdProdutoNavigation.Nome}}</td>
+                <td>{{car.IdProdutoNavigation.Preco}}</td>
+                <td><input type="number" ng-model="car.Quantidade" ng-change="adicionarCarrinho(car.Quantidade,car.IdProduto)" /></td>
+                <td>{{car.IdProdutoNavigation.Quantidade}}</td>
+                <td>{{car.Quantidade*car.IdProdutoNavigation.Preco}}</td>
+                <td><button class="btn btn-primary" ng-click="apagarProduto(car)">X</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary btn-xl" ng-click="finalizar()" ng-if="carrinho.length>0">Finalizar</button>
+
+</div>
+
+

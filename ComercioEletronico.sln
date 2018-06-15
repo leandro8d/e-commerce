@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "ComercioEletronico\Web.csproj", "{61B9468E-A1AE-4BDA-A6E4-0BE2B17C161F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{CE81C70C-450E-4685-AD92-A268FC8A1686}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://localhost", "http://localhost", "{9D773F0A-A69A-4C06-875C-566B814E8BCE}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\projetos\e-commerce\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\projetos\e-commerce\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\..\projetos\e-commerce\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61B9468E-A1AE-4BDA-A6E4-0BE2B17C161F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B9468E-A1AE-4BDA-A6E4-0BE2B17C161F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B9468E-A1AE-4BDA-A6E4-0BE2B17C161F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B9468E-A1AE-4BDA-A6E4-0BE2B17C161F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE81C70C-450E-4685-AD92-A268FC8A1686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE81C70C-450E-4685-AD92-A268FC8A1686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE81C70C-450E-4685-AD92-A268FC8A1686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE81C70C-450E-4685-AD92-A268FC8A1686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D773F0A-A69A-4C06-875C-566B814E8BCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D773F0A-A69A-4C06-875C-566B814E8BCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D773F0A-A69A-4C06-875C-566B814E8BCE}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D773F0A-A69A-4C06-875C-566B814E8BCE}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B81D44BE-8CC7-4027-A7D3-846525A90984}
+	EndGlobalSection
+EndGlobal

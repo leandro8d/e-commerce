@@ -1,0 +1,109 @@
+﻿<div class="col-lg-12">
+    <div class="col-lg-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">{{produto.Nome}}</div>
+            <div class="panel-body">
+                <div class="col-lg-8">
+                    <h4>{{produto.Marca}}</h4>
+                </div>
+                <div class="col-lg-12">
+                    <img src="{{produto.Foto}}" width="400" height="300" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-lg-5">
+                            <i class="fas fa-3x" ng-class="{'fa-check-circle':produto.Quantidade>0,'fa-ban':produto.Quantidade <= 0 }"></i>
+                        </div>
+                        <div class="col-lg-7">
+                            {{produto.Quantidade>0?"Disponível!":"Indisponível!"}}
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12">
+                        <hr />
+                    </div>
+                    <div class="col-lg-12 text-center">
+                        <button type="button" class="btn btn-primary btn-lg" ng-click="adicionarCarrinho(1)" ng-if="produto.Quantidade>0">
+                            <i class="fas fa-check-circle"></i>
+
+                            {{ produto.Quantidade>0?"Comprar":""}}
+                        </button>
+                    </div>
+                    <div class="col-lg-12">
+                        <hr />
+                    </div>
+                    <div class="col-lg-12">
+                        <h3>RS$ {{produto.Preco|number:2}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Descrição</div>
+            <div class="panel-body">
+                <div class="col-lg-12">
+
+
+                    <pre class="angular-with-newlines" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><b>{{produto.Descricao}}</b></pre>
+
+                </div>
+               
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Comentarios</div>
+            <div class="panel-body">
+
+                <div class="col-lg-12">
+                    <hr />
+                </div>
+                <table class="table">
+                    <tr ng-repeat="c in comentarios">
+                        <td>Autor:{{c.IdUsuarioNavigation.Nome}}</td>
+                        <td>{{c.Titulo}} <p>{{c.Comentario}}</p></td>
+                    </tr>
+                </table>
+                <div class="col-lg-12 " ng-if="usuarioLogado">
+                    <button type="button" class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Novo Comentario</button>
+                    <hr>
+                    <div ng-init="isCollapsed = true;" uib-collapse="isCollapsed">
+                        <div class="col-lg-2 form-group">
+                            <label>Título</label>
+                        </div>
+                        <div class="col-lg-11 form-group">
+                            <input class="form-control" ng-model="comentario.Titulo" />
+                        </div>
+
+                        <div class="col-lg-2 form-group">
+                            <label>Comentario</label>
+                        </div>
+                        <div class="col-lg-11 form-group">
+                            <textarea rows="3" class="form-control" ng-model="comentario.Comentario"></textarea>
+                        </div>
+                        <div class="col-lg-11 form-group">
+                            <button class="btn btn-primary fa-pull-right" ng-click="postarComentario(comentario)">
+                                Salvar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
