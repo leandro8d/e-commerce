@@ -19,6 +19,7 @@ namespace Web
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseUrls("http://*:61575")
                 .UseKestrel()
                 .UseStartup<Startup>()
                 .Build();
